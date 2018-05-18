@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css?family=Lato");
+
+/* define special properties for the colors and font used in the project */
+:root {
+  --color-btn-green: #33A652;
+  --color-btn-red: #E74234;
+  --color-btn-yellow: #F7B904;
+  --color-btn-blue: #2A79EE;
+  --color-bg: #1F1C3D;
+  --color-txt: #EDEDED;
+
+  --font-main: 'Lato', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  font-family: var(--font-main);
+  color: var(--color-txt);
+  background-color: var(--color-bg);
+}
+
+.container {
+  /* display the four buttons in a single row, at the bottom of the page. Almost. */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 1rem 0;
+}
+
+.container .btn {
+  /* for all buttons, create circular buttons of a reasonable size */
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+  border: none;
+  /* separate the buttons from each other (the vertical distance is included for small-screen devices) */
+  margin: 1rem 1.2rem;
+}
+.container .btn:active {
+  /* upon clicking on the buttons, increase the brightness and include a drop shadow to include a white glow beneath the element */
+  filter: brightness(150%) drop-shadow(0 0 5px var(--color-txt));
+}
+
+/* for each separate button, apply a different color for the background */
+.container .btn-green {
+  background: var(--color-btn-green);
+}
+.container .btn-red {
+  background: var(--color-btn-red);
+}
+.container .btn-yellow {
+  background: var(--color-btn-yellow);
+}
+.container .btn-blue {
+  background: var(--color-btn-blue);
+}
+
+
+@media screen and (max-width: 600px) {
+  /* on small screen devices, lay the buttons in a single column */
+  .container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
