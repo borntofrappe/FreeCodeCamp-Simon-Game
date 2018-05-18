@@ -44,22 +44,22 @@ body {
   /* separate the buttons from each other (the vertical distance is included for small-screen devices) */
   margin: 1rem 1.2rem;
 }
-.container .btn:active {
+.container .btn:active, .btn-pressed {
   /* upon clicking on the buttons, increase the brightness and include a drop shadow to include a white glow beneath the element */
   filter: brightness(150%) drop-shadow(0 0 5px var(--color-txt));
 }
 
 /* for each separate button, apply a different color for the background */
-.container .btn-green {
+.container .btn[data-color="green"] {
   background: var(--color-btn-green);
 }
-.container .btn-red {
+.container .btn[data-color="red"] {
   background: var(--color-btn-red);
 }
-.container .btn-yellow {
+.container .btn[data-color="yellow"] {
   background: var(--color-btn-yellow);
 }
-.container .btn-blue {
+.container .btn[data-color="blue"] {
   background: var(--color-btn-blue);
 }
 

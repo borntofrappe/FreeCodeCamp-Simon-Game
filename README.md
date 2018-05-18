@@ -57,6 +57,10 @@ The project is built one feature at a time. Spending a variable amount of time a
 
 V1: include four buttons in a single row. Four buttons of different colors. Four buttons laid in a single column on small screen devices.
 
-V2: with filter properties, increase the brightness of the different buttons when they are pressed
+V2: with filter properties, increase the brightness of the different buttons when they are pressed.
 
+v3: trigger a button press with JavaScript, without need for further interaction from the player.
 
+V4: trigger a button press for a button at random, and repeat the process after an interval.
+
+V5: store in an array which button(s) is(are) pressed, and include the previous buttons alongside a new, random one.
