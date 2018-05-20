@@ -13,12 +13,24 @@
 </head>
 <body>
   
-  <!-- container wrapping four buttons, each with a respective color stored in a data attribute -->
+  <!-- in a wrapping container -->
   <div class="container">
-    <button class="btn" data-color="green"></button>
-    <button class="btn" data-color="red"></button>
-    <button class="btn" data-color="yellow"></button>
-    <button class="btn" data-color="blue"></button>
+
+    <!-- div wrapping two buttons to enable strict mode and stop/play a game, as well as a div showing the current score  -->
+    <div class="container__setup">
+      <button style="opacity:0;" class="btn btn-strict">strict</button>
+      <div class="display-score"></div>
+      <button class="btn btn-toggle">play</button>
+    </div>
+
+    <!-- div wrapping four buttons, each with a respective color stored in a data attribute -->
+    <div class="container__gamepad">
+      <button class="btn" data-color="green"></button>
+      <button class="btn" data-color="red"></button>
+      <button class="btn" data-color="yellow"></button>
+      <button class="btn" data-color="blue"></button>
+    </div>
+    
   </div>
 
 <script src="script.js"></script>
