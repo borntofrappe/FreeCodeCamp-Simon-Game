@@ -57,10 +57,22 @@ The project is built one feature at a time. Spending a variable amount of time a
 
 V1: include four buttons in a single row. Four buttons of different colors. Four buttons laid in a single column on small screen devices.
 
-V2: with filter properties, increase the brightness of the different buttons when they are pressed.
+V2: with filter properties, increase the brightness of the different buttons when they are pressed
 
-v3: trigger a button press with JavaScript, without need for further interaction from the player.
+v3: trigger a button press with JavaScript, without need for further interaction from the player
 
-V4: trigger a button press for a button at random, and repeat the process after an interval.
+V4: trigger a button press for a button at random, and repeat the process after an interval
 
-V5: store in an array which button(s) is(are) pressed, and include the previous buttons alongside a new, random one.
+V5: store in an array which button(s) is(are) pressed, and include the previous buttons alongside a new, random one
+
+V6: without considering the player side still, instead of pressing 20 random, individual buttons, allow the computer to press a series of 20 buttons, progressively made up of the previous presses plus a new random one
+
+V7: include a button to allow the player to interact with the game. When beginning a game, the program presses a random button.
+
+V8: after pressing a button, the program reacts to a press on one of the four colored buttons, with a message displaying the correct/wrong choice.
+
+_V9 Update_: I got caught up in my code editor and jumping a few steps I created a functioning Simon Game. Granted, edge cases need to be considered, by the substance is there. The game works in its best-case-scenario.
+
+The planning of the different versions got a little derailed as I got into the flow of writing JavaScript. Since planning is actually a way for me to start coding on features, start somewhere, I consider this derailment as a success.
+
+V9: play a Simon Game. The computer adds a new step for every correct series of button presses. The computer shows again the series of button presses if a wrong choice is made.

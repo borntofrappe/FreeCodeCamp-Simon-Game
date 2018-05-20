@@ -27,15 +27,54 @@ body {
 }
 
 .container {
-  /* display the four buttons in a single row, at the bottom of the page. Almost. */
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
+}
+.container__setup {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  justify-content: center;
+  padding: 1.5rem 0;
+  align-items: center;
+}
+.container__setup .btn {
+  width: 62px;
+  height: 62px;
+  margin: 1.5rem;
+  border-radius: 50%;
+  background: none; 
+  font-family: inherit;
+  color: inherit;
+  text-transform: uppercase;
+}
+.selection {
+  color: var(--color-bg);
+  background: var(--color-txt);
+}
+.container__setup .display-score {
+  width: 100px;
+  height: 82px;
+  border: 0px solid var(--color-btn-red);
+  margin: 1.5rem 0;
+  text-align: center;
+  line-height: 82px;
+  font-size: 2rem;
+
+  order: -1;
+}
+
+.container__gamepad {
+  /* display the four buttons in a single row, at the bottom of the page. Almost. */
+  flex-grow: 1;
   display: flex;
   justify-content: center;
   align-items: flex-end;
   padding: 1rem 0;
 }
 
-.container .btn {
+.container__gamepad .btn {
   /* for all buttons, create circular buttons of a reasonable size */
   width: 7rem;
   height: 7rem;
@@ -44,31 +83,43 @@ body {
   /* separate the buttons from each other (the vertical distance is included for small-screen devices) */
   margin: 1rem 1.2rem;
 }
-.container .btn:active, .btn-pressed {
+.container__gamepad .btn:active, .btn-pressed {
   /* upon clicking on the buttons, increase the brightness and include a drop shadow to include a white glow beneath the element */
-  filter: brightness(150%) drop-shadow(0 0 5px var(--color-txt));
+  filter: brightness(150%) drop-shadow(0 0 7px var(--color-txt));
 }
 
 /* for each separate button, apply a different color for the background */
-.container .btn[data-color="green"] {
+.container__gamepad .btn[data-color="green"] {
   background: var(--color-btn-green);
 }
-.container .btn[data-color="red"] {
+.container__gamepad .btn[data-color="red"] {
   background: var(--color-btn-red);
 }
-.container .btn[data-color="yellow"] {
+.container__gamepad .btn[data-color="yellow"] {
   background: var(--color-btn-yellow);
 }
-.container .btn[data-color="blue"] {
+.container__gamepad .btn[data-color="blue"] {
   background: var(--color-btn-blue);
 }
 
 
 @media screen and (max-width: 600px) {
   /* on small screen devices, lay the buttons in a single column */
-  .container {
+  .container__setup {
+    flex-direction: row;
+    justify-content: center;
+    padding: 1.5rem 0;
+    align-items: center;
+    align-self: center;
+  }
+  .container__setup .display-score {
+    order: 0;
+  }
+  
+  .container__gamepad {
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
+
 }
