@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Lato");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono");
 
 /* define special properties for the colors and font used in the project */
 :root {
@@ -9,7 +9,7 @@
   --color-bg: #1F1C3D;
   --color-txt: #EDEDED;
 
-  --font-main: 'Lato', sans-serif;
+  --font-main: 'Roboto Mono', monospace;
 }
 
 * {
@@ -27,6 +27,7 @@ body {
 }
 
 .container {
+  /* lay the two wrapping div one on top of another */
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -34,40 +35,85 @@ body {
 .container__setup {
   display: flex;
   flex-direction: column;
+  /* position the div on the left side of the screen (the div is a flex item) */
   align-self: flex-start;
+  /* center the contents in the div (the div is also a flex container) */
   justify-content: center;
-  padding: 1.5rem 0;
   align-items: center;
+  padding: 1.5rem 0;
 }
+
 .container__setup .btn {
-  width: 62px;
-  height: 62px;
+  width: 72px;
+  height: 72px;
   margin: 1.5rem;
   border-radius: 50%;
-  background: none; 
   font-family: inherit;
-  color: inherit;
   text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: bold;
 }
-.selection {
+/* 
+for the buttons, declare two classes which determine its background/color depending on whether or not they are active 
+buttons start by default as inactive and are altered in JS adding and removing the class
+*/
+.inactive {
+  background: transparent; 
+  color: var(--color-txt);
+}
+.active {
   color: var(--color-bg);
   background: var(--color-txt);
 }
+
+
 .container__setup .display-score {
   width: 100px;
-  height: 82px;
-  border: 0px solid var(--color-btn-red);
+  height: 100px;
   margin: 1.5rem 0;
+  /* center the text inside of the div */
   text-align: center;
-  line-height: 82px;
-  font-size: 2rem;
-
+  line-height: 100px;
+  font-size: 3.5rem;
+  /* position the display atop both buttons */
   order: -1;
+}
+/* for the score, include two classes which are applied as to notify the player of the incorrect/correct answer */
+
+.incorrect {
+  color: var(--color-btn-red);
+  filter: brightness(150%);
+  position: relative;
+  animation: shakeText 0.2s 2 ease-out;  
+}
+@keyframes shakeText {
+  0%, 100% {
+    left: 0;
+  }
+  33% {
+    left: 5px;
+  }
+  67% {
+    left: -5px;
+  }
+}
+
+.correct {
+  color: var(--color-btn-green);
+  filter: brightness(150%);
+  animation: scaleText 0.3s ease-out;
+  
+}
+@keyframes scaleText {
+  70% {
+    transform: scale(1.5);
+  }
 }
 
 .container__gamepad {
-  /* display the four buttons in a single row, at the bottom of the page. Almost. */
+  /* allow for the second div to occupy the available space left in the viewport  */
   flex-grow: 1;
+  /* display the four buttons in a single row, at the bottom of the page */
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -75,7 +121,7 @@ body {
 }
 
 .container__gamepad .btn {
-  /* for all buttons, create circular buttons of a reasonable size */
+  /* for all buttons, create round buttons of a reasonable size */
   width: 7rem;
   height: 7rem;
   border-radius: 50%;
@@ -83,8 +129,9 @@ body {
   /* separate the buttons from each other (the vertical distance is included for small-screen devices) */
   margin: 1rem 1.2rem;
 }
+
 .container__gamepad .btn:active, .btn-pressed {
-  /* upon clicking on the buttons, increase the brightness and include a drop shadow to include a white glow beneath the element */
+  /* upon clicking on the buttons, and for the class of .btn-pressed, increase the brightness and include a drop shadow to include a white glow beneath the element */
   filter: brightness(150%) drop-shadow(0 0 7px var(--color-txt));
 }
 
@@ -104,20 +151,26 @@ body {
 
 
 @media screen and (max-width: 600px) {
-  /* on small screen devices, lay the buttons in a single column */
+  /* for small screen devices */
   .container__setup {
+    /* lay the strict, play buttons and the score display in a single row */
     flex-direction: row;
-    justify-content: center;
-    padding: 1.5rem 0;
-    align-items: center;
+    /* position the row in the center of the viewport (the div is a flex item of the wrapping .container) */
     align-self: center;
+    /* center the buttons and the display in the row */
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem 0;
   }
   .container__setup .display-score {
+    /* position the score between the two buttons */
     order: 0;
   }
   
   .container__gamepad {
+    /* lay the colored buttons in a single column */
     flex-direction: column;
+    /* center the buttons horizontally and vertically */
     align-items: center;
     justify-content: center;
   }
