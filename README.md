@@ -1,4 +1,4 @@
-Link to the work-in-progress pen right [here]https://codepen.io/borntofrappe/full/jxXBgm/).
+Link to the work-in-progress pen right [here](https://codepen.io/borntofrappe/full/jxXBgm/).
 
 # Preface 
 
