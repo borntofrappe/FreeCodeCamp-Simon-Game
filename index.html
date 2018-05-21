@@ -18,17 +18,17 @@
 
     <!-- div wrapping two buttons to enable strict mode and stop/play a game, as well as a div showing the current score  -->
     <div class="container__setup">
-      <button style="opacity:0;" class="btn btn-strict">strict</button>
-      <div class="display-score"></div>
-      <button class="btn btn-toggle">play</button>
+      <button class="btn btn-strict inactive">strict</button>
+      <div class="display-score">--</div>
+      <button class="btn btn-toggle inactive">play</button>
     </div>
 
     <!-- div wrapping four buttons, each with a respective color stored in a data attribute -->
     <div class="container__gamepad">
-      <button class="btn" data-color="green"></button>
-      <button class="btn" data-color="red"></button>
-      <button class="btn" data-color="yellow"></button>
-      <button class="btn" data-color="blue"></button>
+      <button class="btn" data-color="green" data-sound="simonSound1"></button>
+      <button class="btn" data-color="red" data-sound="simonSound2"></button>
+      <button class="btn" data-color="yellow" data-sound="simonSound3"></button>
+      <button class="btn" data-color="blue" data-sound="simonSound4"></button>
     </div>
     
   </div>
